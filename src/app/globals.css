@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f5f7ff;
+  --panel: #ffffff;
+  --panel-soft: #eef3ff;
+  --text: #111827;
+  --muted: #6b7280;
+  --primary: #4f46e5;
+  --primary-dark: #312e81;
+  --accent: #f97316;
+  --success: #10b981;
+  --line: rgba(99, 102, 241, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #f8faff 0%, #eef3ff 100%);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at top, #eef2ff, #312e81 58%, #111827);
+}
+
+.splash-logo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: splash-bounce 1s ease-in-out infinite alternate;
+}
+
+.splash-logo {
+  display: grid;
+  place-items: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, #ffffff, #c7d2fe);
+  box-shadow: 0 24px 60px rgba(79, 70, 229, 0.45);
+  color: #312e81;
+  font-size: 4rem;
+  font-weight: 900;
+}
+
+.splash-title {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: white;
+}
+
+@keyframes splash-bounce {
+  from {
+    transform: translateY(0px) scale(0.96);
+  }
+  to {
+    transform: translateY(-12px) scale(1);
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
+}
